@@ -20,7 +20,7 @@ question = st.text_input("对PDF的内容进行提问", disabled=not uploaded_fi
 
 if uploaded_file and question :
     with st.spinner("AI正在思考中，请稍等..."):
-        response = qa_agent(os.getenv("OPENAI_API_KEY"), st.session_state["memory"],
+        response = qa_agent("sk-wUWt9zMkDea3WE76E213C685Cf504cE5A2A1293f4b6d7969", st.session_state["memory"],
                             uploaded_file, question)
     st.write("### 答案")
     st.write(response["answer"])
